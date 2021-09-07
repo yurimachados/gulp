@@ -10,9 +10,10 @@ const stripCss = require('gulp-strip-css-comments')
 function tarefasCSS(cb) {
 
     return gulp.src([
-            './node_modules/bootstrap/dist/css/bootstrap.css', 
-            './vendor/**/*.css',
+            './node_modules/bootstrap/dist/css/bootstrap.css',
             './node_modules/@fortawesome/fontawesome-free/css/fontawesome.css',
+            './vendor/owl/css/owl.css',
+            './vendor/jquery-ui/jquery-ui.css',
             './src/css/style.css'
         ])
         .pipe(stripCss())                   // remove comentários
@@ -27,9 +28,11 @@ function tarefasJS(){
 
     return gulp.src([
             './node_modules/jquery/dist/jquery.js',
-           './node_modules/bootstrap/dist/js/bootstrap.js',
-           './vendor/**/*.js',
-           './src/js/custom.js'
+            './node_modules/bootstrap/dist/js/bootstrap.js',
+            './vendor/owl/js/owl.js',
+            './vendor/jquery-mask/jquery.mask.js',
+            './vendor/jquery-ui/jquery-ui.js',
+            './src/js/custom.js'
         ])
         .pipe(stripJs())                    // remove comentários
         .pipe(concat('scripts.js'))         // mescla arquivos
